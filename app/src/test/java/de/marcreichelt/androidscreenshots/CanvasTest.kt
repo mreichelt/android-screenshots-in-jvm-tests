@@ -18,7 +18,7 @@ import java.io.FileOutputStream
 class CanvasTest {
 
     @Test
-    fun `draw a circle`() {
+    fun `draw a circle on a canvas`() {
         val bitmap = Bitmap.createBitmap(200, 200, ARGB_8888)
         val canvas = Canvas(bitmap)
         val paint = Paint()
@@ -30,7 +30,7 @@ class CanvasTest {
         paint.color = Color.RED
         canvas.drawCircle(100f, 100f, 75f, paint)
 
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, FileOutputStream("circle.png"))
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, FileOutputStream("canvas.png"))
     }
 
 }
