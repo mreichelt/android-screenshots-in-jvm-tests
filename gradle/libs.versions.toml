@@ -12,6 +12,7 @@ robolectric = "4.10.3"
 roborazzi = "1.8.0-alpha-2"
 androidxTestRules = "1.5.0"
 androidxTestRunner = "1.5.2"
+androidxAppCompat = "1.6.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -35,6 +36,8 @@ roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi
 androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "androidxTestRules" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidxTestRunner" }
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx-test-ext-junit" }
+lottie = { group = "com.airbnb.android", name = "lottie", version = "6.1.0" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

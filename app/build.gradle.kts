@@ -66,6 +66,8 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.lottie)
+    implementation(libs.androidx.appcompat)
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
