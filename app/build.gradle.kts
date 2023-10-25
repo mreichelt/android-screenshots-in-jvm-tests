@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -74,6 +75,7 @@ dependencies {
     testImplementation(libs.roborazzi)
     testImplementation(libs.androidx.test.rules)
     testImplementation(libs.androidx.test.runner)
+    testImplementation(libs.androidx.junit.ktx)
 
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
