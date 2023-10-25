@@ -36,4 +36,11 @@ class ComposeTest {
         composeRule.onRoot().captureRoboImage("composable_greeting.png")
     }
 
+    @Test
+    fun `snapshot with roborazzi-compose`() {
+        captureRoboImage("composable_roborazzi-compose.png") {
+            Text("roborazzi-compose")
+        }
+    }
+
 }
