@@ -31,3 +31,59 @@ Renders a simple `TextView` in an empty `Activity`.
 - The `setUp` method shows how to set up any activity class and control the lifecycle manually. The other tools will do this for you!
 - The image has a low resolution because the Robolectric default is `mdpi`. You can add a `qualifiers = "xxxhdpi"`
   parameter to the `@Config` to improve it.
+
+## ActivityTest
+
+Renders the `ClassicViewActivity` (with a good old Android TextView) using [Roborazzi](https://github.com/takahirom/roborazzi).
+
+- It doesn't do anything at first - because Roborazzi has different modes you can activate:
+  - `record` will create the (golden) files,
+  - `compare` will compare with your golden files (and create diff images),
+  - and `verify` will make the test fail when something is different.
+- To capture, run: `./gradlew :app:recordRoborazziDebug`
+  - or: add `roborazzi.test.record=true` to your `gradle.properties`, then run test
+- Note that this is using the Espresso testing framework. Yes, you can use Espresso in your JVM unit tests!
+- Robolectric comes with some nice qualifiers you can use, like `RobolectricDeviceQualifiers.Pixel4`
+
+## ComposeActivityTest
+
+Renders an activity that uses Jetpack Compose.
+
+- all the finders, like `onRoot()`, work here as well!
+
+## ComposeTest
+
+Renders Composables. Yay Compose!
+
+- no activity required - even cleaner code!
+- the last test is using `captureRoboImage` from robolectric-compose - no Rule required!
+
+## LottieTest
+
+Renders a [Lottie](https://airbnb.design/lottie/) animation from unit tests - capturing multiple frames!
+
+- set `images = 42` and see the generated images
+- I used this to debug a Lottie animation that was set up with custom translations using [setTextDelegate](https://github.com/airbnb/lottie-android/blob/34aa06b8db75976f06b134b4fdcdb7dc26e48e07/lottie/src/main/java/com/airbnb/lottie/LottieAnimationView.java#L1008),
+  to see that the translations were actually being rendered.
+
+## Using Roborazzi to check your Compose upgrade
+
+- Run `./gradlew :app:recordRoborazziDebug` to record
+- Upgrade Compose from 2023.08.00 to 2023.10.00
+- Run `./gradlew :app:verifyRoborazziDebug` to verify upgrade
+
+## nowinandroid
+
+To see more real-world examples using Robolectric & Roborazzi:
+
+1. Open https://github.com/android/nowinandroid in Android Studio
+2. Open `ForYouScreenScreenshotTests`
+3. Run `./gradlew :feature:foryou:recordRoborazziDebug` to record the PNG files or `./gradlew :feature:foryou:compareRoborazziDebug`
+
+## That's all folks!
+
+Look at https://github.com/takahirom/roborazzi to see all the amazing other things it can do - like
+capturing single views, advanced CI stuff, recording GIFs and more!
+
+If you liked this talk, please follow and ping me on [Mastodon](https://mastodon.social/@mreichelt)
+or [Twitter](https://twitter.com/mreichelt). Thank you!
