@@ -87,3 +87,7 @@ capturing single views, advanced CI stuff, recording GIFs and more!
 
 If you liked this talk, please follow and ping me on [Mastodon](https://mastodon.social/@mreichelt)
 or [Twitter](https://twitter.com/mreichelt). Thank you!
+
+
+Bonus: I can wholeheartedly recommend the workshop [Mastering screenshot testing libraries for Android](https://www.droidcon.com/2023/07/31/mastering-screenshot-testing-libraries-for-android-a-hands-on-workshop/)
+by Sergio Sastre Flórez - he shows Roborazzi and more screenshot testing libraries in more detail!
